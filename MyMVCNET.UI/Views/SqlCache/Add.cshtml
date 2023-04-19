@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+@model MyMVCNET.UI.Models.DBFirst.Categories
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+</head>
+<body>
+<div>
+	@using (Html.BeginForm("Add", "SqlCache", FormMethod.Post))
+	{
+		<span>Kategori Adı: </span>	@Html.TextBoxFor(x => x.CategoryName)<br /><br />
+		<span>Açıklaması: </span>@Html.TextBoxFor(x => x.Description)<br /><br />
+		<input type="submit" value="Giriş Yap" name="name" />
+	}
+</div>
+</body>
+</html>

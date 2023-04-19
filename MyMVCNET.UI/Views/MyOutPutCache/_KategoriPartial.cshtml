@@ -1,0 +1,16 @@
+﻿
+
+
+@model List<MyMVCNET.UI.Models.VM.KategoriVM>
+
+<div>
+    @foreach (var item in Model)
+    {
+        <div class="hoppala">@item.KategoriAdi</div>
+    }
+</div>
+<style>
+    .hoppala {
+        color:red;
+    }
+</style>

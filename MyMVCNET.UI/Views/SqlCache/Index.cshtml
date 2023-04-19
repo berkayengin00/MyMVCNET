@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+@using MyMVCNET.UI.Models.DBFirst
+@model List<MyMVCNET.UI.Models.DBFirst.Categories>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<div>
+    @foreach (Categories item in Model)
+    {
+	    <span>@item.CategoryName</span>
+    }
+</div>
+</body>
+</html>

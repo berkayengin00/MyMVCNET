@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+@using MyMVCNET.UI.Models.VM
+@model List<MyMVCNET.UI.Models.VM.KategoriVM>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>XmlDependencySerilazer</title>
+</head>
+<body>
+<div>
+    @foreach (KategoriVM item in Model)
+    {
+        @item.KategoriAdi
+    }
+</div>
+</body>
+</html>

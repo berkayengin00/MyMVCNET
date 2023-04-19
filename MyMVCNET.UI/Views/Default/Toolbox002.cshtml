@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+}
+@model MyMVCNET.UI.Models.VM.SoftwareVM
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Toolbox002</title>
+
+</head>
+<body>
+<div>
+    C# @Html.RadioButtonFor(a=>a.Key,"C sharp")
+    
+    Java @Html.RadioButtonFor(a=>a.Key,"Java",new Dictionary<string, object>()
+         {
+	         {"sfsdfsdf","berk"},
+	         {"gsdgsdgsd","Ay"},
+	         {"class","text-danger"}
+         })
+</div>
+</body>
+</html>

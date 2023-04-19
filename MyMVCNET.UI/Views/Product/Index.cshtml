@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using MyMVCNET.UI.Models.VM
+@model List<ProductCardVM>
+<!DOCTYPE html>
+
+@foreach (ProductCardVM product in Model)
+{
+    <div class="card m-2" style="width:15em">
+        <img src="~/img/Red_Apple.jpg" class="card-img-top" />
+        <div class="card-body">
+            <p class="fw-bold">@product.CategoryName</p>
+            <p class="card-text fw-light" style="height:50px;">@product.Name</p>
+            <div class="row">
+                <p>Fiyat: @product.UnitPrice</p>
+                <input value="Sepete Ekle" type="button" class="btn btn-outline-warning"
+                       onClick="SepetEkle(&quot;@product.Name&quot;,&quot;@product.Name&quot;,'@product.UnitPrice','@product.Id')" />
+            </div>
+        </div>
+    </div>
+}
+
+
+<script type="text/javascript">
+
+    function SepetEkle(proName, catName, proPrice, proID) {
+        debugger;
+
+        var product = {
+            "UrunId": proID,
+            "UrunAdi": proName,
+            "KategoriAdi": catName,
+            "UrunFiyati": proPrice
+        };
+
+        if (localStorage.getItem("sepet") != null) {
+            var sepettekiUrunler = JSON.parse(localStorage.getItem("sepet"));
+            sepettekiUrunler.push(product);
+            localStorage.setItem("sepet", JSON.stringify(sepettekiUrunler));
+        } else {
+            var products = [];
+            products.push(product);
+            localStorage.setItem("sepet", JSON.stringify(products));
+        }
+    }
+</script>

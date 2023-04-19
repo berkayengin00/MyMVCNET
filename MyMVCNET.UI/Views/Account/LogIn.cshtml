@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+@model MyMVCNET.UI.Models.VM.LoginVM
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LogIn</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="row justify-content-center">
+		@using (@Html.BeginForm("Login","Account",FormMethod.Post,new {@class= "col-md-4 mt-5" }))
+        {
+			@Html.AntiForgeryToken()
+	        <div class="row align-items-center">
+
+		        @Html.Label("TC No Giriniz", new { @class = "form-label col-md-3" })
+		        <div class="col-md-9 mb-3">
+			        @Html.TextBoxFor(x => x.IdendityNumber, new { @class = "form-control" })
+		        </div>
+
+		        @Html.Label("Ad Giriniz: ", new { @class = "form-label col-md-3" })
+		        <div class="col-md-9 mb-3">
+			        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+		        </div>
+
+		        @Html.Label("Soyad Giriniz: ", new { @class = "form-label col-md-3" })
+		        <div class="col-md-9 mb-3">
+			        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+		        </div>
+
+		        @Html.Label("Yaş Giriniz: ", new { @class = "form-label col-md-3" })
+		        <div class="col-md-9 mb-3">
+			        @Html.TextBoxFor(x => x.Age, new { @class = "form-control" })
+		        </div>
+				
+		        <div class="text-end">
+                    <input type="submit" name="name" value="Giriş Yap" class="btn btn-outline-success col-md-4" />
+		        </div>
+
+	        </div>
+		}
+    </div>
+</body>
+</html>

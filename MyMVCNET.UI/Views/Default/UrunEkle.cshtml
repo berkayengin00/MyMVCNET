@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+@model MyMVCNET.UI.Models.VM.UrunEkleVM
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UrunEkle</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            <span>Urun Adı</span> @Html.AntiForgeryToken()@Html.TextBoxFor(a => a.UrunAdi)<br />
+            <span>Stok Miktarı</span> @Html.TextBoxFor(a => a.StokMiktari)<br />
+	        <span>Urun Fiyatı</span>	@Html.TextBoxFor(a => a.UrunFiyati)<br />
+
+	        <span>Kategoriler</span>	 @Html.DropDownListFor(a => a.KategoriId, Model.KategoriListesi)
+            <br />
+
+	        <span>Tedarikçiler</span>	@Html.DropDownListFor(x => x.Tedarikci, Model.TedarikciListesi)
+
+            <input type="submit" value="Ürün Ekle" />
+        }
+
+    </div>
+</body>
+</html>
